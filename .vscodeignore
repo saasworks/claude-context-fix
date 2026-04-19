@@ -1,0 +1,11 @@
+# Only include the extension runtime files in the VSIX.
+api/
+configs/
+scripts/
+secrets/
+www/
+node_modules/
+logo.png
+.github/
+.eslintrc.js
+.gitignore

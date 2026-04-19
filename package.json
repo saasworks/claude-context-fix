@@ -1,0 +1,61 @@
+{
+    "name": "claude-context-fix",
+    "displayName": "Add to Claude Context",
+    "description": "Right-click any file or folder to inject it as an @mention directly into the Claude Code sidebar input.",
+    "version": "1.0.0",
+    "publisher": "saasworks",
+    "license": "MIT",
+    "icon": "icon.png",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/saasworks/claude-context-fix"
+    },
+    "engines": {
+        "vscode": "^1.80.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "keywords": [
+        "claude",
+        "claude code",
+        "anthropic",
+        "ai",
+        "context"
+    ],
+    "activationEvents": [
+        "onStartupFinished"
+    ],
+    "main": "./extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "claudeContextFix.addToContext",
+                "title": "Add to Claude Context"
+            }
+        ],
+        "menus": {
+            "explorer/context": [
+                {
+                    "command": "claudeContextFix.addToContext",
+                    "when": "resourceScheme == file || explorerResourceIsFolder",
+                    "group": "navigation"
+                }
+            ],
+            "editor/context": [
+                {
+                    "command": "claudeContextFix.addToContext",
+                    "when": "resourceScheme == file",
+                    "group": "navigation"
+                }
+            ],
+            "editor/title/context": [
+                {
+                    "command": "claudeContextFix.addToContext",
+                    "when": "resourceScheme == file",
+                    "group": "navigation"
+                }
+            ]
+        }
+    }
+}
